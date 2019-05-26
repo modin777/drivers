@@ -1,0 +1,29 @@
+<i 
+  class="material-icons expand-but no-select no-outline"
+  [ngClass]="{'expand-but--expanded': expanded}"
+  [hidden]="!children || !children.length"
+  (click)="expand()">
+  keyboard_arrow_right
+</i>
+
+<mat-checkbox
+  [(ngModel)]="checked"
+  [(indeterminate)]="indeterminate"
+  (change)="check()"
+  >{{label}}</mat-checkbox>
+
+<div class="children" [hidden]="!expanded">
+  <app-item 
+    class="item"
+    *ngFor="let item of children"
+    [label]="item.label"
+    [children]="item.children"
+    [checked]="item.checked"
+    [indeterminate]="item.indeterminate"
+    [expanded]="item.expanded"
+    [id]="item.id"
+    (onCheck)="onCheckChildren($event)"
+    (onExpand)="expand($event)">
+    {{item.label}}
+  </app-item>
+</div>

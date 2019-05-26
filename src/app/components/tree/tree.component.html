@@ -1,0 +1,16 @@
+<div class="tree">
+  <app-item 
+    class="item"
+    *ngFor="let item of items"
+    [label]="item.label"
+    [children]="item.children"
+    [checked]="item.checked"
+    [indeterminate]="item.indeterminate"
+    [expanded]="item.expanded"
+    [id]="item.id"
+    (onCheck)="onCheck($event)"
+    (onExpand)="onExpand($event)"
+    >
+    {{item.label}}
+  </app-item>
+</div>

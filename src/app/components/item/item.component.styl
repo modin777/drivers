@@ -1,0 +1,23 @@
+:host
+  position relative
+  margin-left 32px
+  margin-top 16px
+
+.children
+  display flex
+  flex-direction column
+
+.expand-but
+  top 0px
+  left -36px
+  position relative
+  cursor pointer
+  opacity 0.5
+  transition 0.1s
+  position absolute
+
+  &:hover
+    opacity 1
+
+.expand-but--expanded
+  transform rotate(90deg);
